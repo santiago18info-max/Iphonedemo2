@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nubo Import · iPhone y tecnología importada en Uruguay</title>
+  <meta name="description" content="iPhone nuevos y semi nuevos, originales y con garantía. Lista de precios actualizada, importación por encargo y envíos a todo el país.">
+  <meta name="theme-color" content="#09090B">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cinta -->
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <div class="container nav-in">
+      <a href="#inicio" class="logo" aria-label="Nubo Import, inicio">nubo<i></i></a>
+      <nav class="menu" id="menu" aria-label="Secciones">
+        <a href="#modelos">Modelos</a>
+        <a href="#precios">Lista de precios</a>
+        <a href="#encargo">Por encargo</a>
+        <a href="#entregas">Entregas</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <div class="nav-act">
+        <a href="#" class="btn btn-grad btn-sm js-wa" data-msg="¡Hola Nubo! Quería consultar por un equipo.">Consultar</a>
+        <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero centrado -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <p class="eyebrow reveal"><span>Nuevo</span> Ya llegó la línea 17 · stock limitado</p>
+      <h1 class="reveal">El iPhone que querés,<br><em>en tu mano hoy.</em></h1>
+      <p class="lead reveal">Equipos originales, nuevos y semi nuevos, con garantía por escrito. Y si no lo tenemos en stock, te lo traemos por encargo.</p>
+      <div class="hero-cta reveal">
+        <a href="#precios" class="btn btn-grad">Ver lista de precios</a>
+        <a href="#encargo" class="btn btn-ghost">Traer por encargo</a>
+      </div>
+      <div class="hero-stage reveal">
+        <figure class="ph"><span></span><img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1800&q=80" alt="iPhone de última generación" onerror="this.remove()"></figure>
+        <ul class="stage-stats">
+          <li><b>+2.000</b><span>equipos entregados</span></li>
+          <li><b>24 h</b><span>entrega en Montevideo</span></li>
+          <li><b>12 cuotas</b><span>con tarjeta</span></li>
+          <li><b>100%</b><span>originales y libres</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modelos: carrusel -->
+  <section class="section" id="modelos">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2>Elegí tu modelo</h2>
+        <div class="arrows">
+          <button id="railPrev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button>
+          <button id="railNext" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="rail" id="rail"></div>
+    </div>
+  </section>
+
+  <!-- Destacado -->
+  <section class="section section-alt" id="destacado">
+    <div class="container feat">
+      <div class="feat-media reveal">
+        <figure class="ph"><span>16 Pro</span><img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=1100&q=80" alt="iPhone 16 Pro" loading="lazy" onerror="this.remove()"></figure>
+        <span class="ribbon">Destacado de la semana</span>
+      </div>
+      <div class="feat-body reveal">
+        <p class="kicker">Nuevo · sellado en caja</p>
+        <h2>iPhone 16 Pro</h2>
+        <p class="muted">El más pedido del mes. Lo entregamos configurado, con tus datos pasados y vidrio templado colocado de regalo.</p>
+        <ul class="specs">
+          <li><b>6,3"</b><span>Pantalla</span></li>
+          <li><b>48 MP</b><span>Cámara principal</span></li>
+          <li><b>USB-C</b><span>Carga rápida</span></li>
+          <li><b>12 meses</b><span>Garantía</span></li>
+        </ul>
+        <div class="pick">
+          <span>Color</span>
+          <div class="swatches" id="fColors"></div>
+        </div>
+        <div class="pick">
+          <span>Capacidad</span>
+          <div class="pills" id="fCaps"></div>
+        </div>
+        <div class="feat-foot">
+          <div><small>Contado o transferencia</small><b id="fPrice"></b></div>
+          <a href="#" class="btn btn-grad" id="fBtn" target="_blank" rel="noopener">Lo quiero</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lista de precios -->
+  <section class="section" id="precios">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div><h2>Lista de precios</h2><p class="muted">Actualizada hoy. Precios en dólares, contado o transferencia.</p></div>
+        <div class="list-tools">
+          <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input id="q" placeholder="Buscar modelo" aria-label="Buscar modelo"></label>
+          <div class="chips" id="chips">
+            <button data-f="todos" class="on">Todos</button>
+            <button data-f="nuevo">Nuevos</button>
+            <button data-f="semi">Semi nuevos</button>
+          </div>
+        </div>
+      </div>
+      <div class="plist reveal">
+        <div class="prow phead"><span>Modelo</span><span>Capacidad</span><span>Estado</span><span>Batería</span><span>Precio</span><span></span></div>
+        <div id="plist"></div>
+        <p class="pempty" id="pempty" hidden>No tenemos ese modelo en stock. <a href="#encargo">Pedilo por encargo →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banda de confianza -->
+  <section class="band">
+    <div class="container band-in">
+      <article class="reveal"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg><h3>Garantía por escrito</h3><p>12 meses en nuevos y 6 en semi nuevos.</p></article>
+      <article class="reveal"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="8" width="16" height="9" rx="2.5"/><path d="M21 11v3"/></svg><h3>Batería verificada</h3><p>Te decimos el porcentaje exacto de cada equipo.</p></article>
+      <article class="reveal"><svg class="ic" viewBox="0 0 24 24"><path d="M4 9a8 8 0 0 1 14-4l2 2M20 15a8 8 0 0 1-14 4l-2-2"/><path d="M20 3v4h-4M4 21v-4h4"/></svg><h3>Tomamos tu usado</h3><p>Entregalo en parte de pago y pagá la diferencia.</p></article>
+      <article class="reveal"><svg class="ic" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg><h3>Envíos a todo el país</h3><p>En el día en Montevideo, 24 a 48 h al interior.</p></article>
+    </div>
+  </section>
+
+  <!-- Por encargo -->
+  <section class="section" id="encargo">
+    <div class="container">
+      <div class="enc-head reveal">
+        <p class="kicker">Importación por encargo</p>
+        <h2>Lo pedís, te lo traemos.</h2>
+        <p class="muted">Si el modelo, el color o la capacidad que buscás no está en la lista, lo importamos para vos.</p>
+      </div>
+      <ol class="timeline">
+        <li class="reveal"><span>1</span><h3>Nos decís qué querés</h3><p>Modelo, color y capacidad. También relojes, auriculares y tablets.</p></li>
+        <li class="reveal"><span>2</span><h3>Te pasamos precio y fecha</h3><p>Cotización cerrada, sin costos sorpresa al llegar.</p></li>
+        <li class="reveal"><span>3</span><h3>Señás y lo pedimos</h3><p>Con el 30% reservás. Te avisamos en cada etapa del envío.</p></li>
+        <li class="reveal"><span>4</span><h3>Llega en 10 a 15 días</h3><p>Lo probás, pagás el saldo y te lo llevás con garantía.</p></li>
+      </ol>
+      <form class="enc-form reveal" id="encForm">
+        <input name="prod" required placeholder="¿Qué querés traer? Ej: iPhone 17 Pro 256 GB azul" aria-label="Producto que querés traer">
+        <input name="name" required placeholder="Tu nombre" autocomplete="given-name" aria-label="Tu nombre">
+        <button class="btn btn-grad">Pedir cotización</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Entregas -->
+  <section class="section section-alt" id="entregas">
+    <div class="container">
+      <div class="sec-head reveal"><div><h2>Entregas de la semana</h2><p class="muted">Cada equipo sale probado y configurado. Esto dicen quienes ya compraron.</p></div></div>
+      <div class="mosaic">
+        <figure class="ph m1 reveal"><span></span><img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=900&q=80" alt="Entrega de equipo" loading="lazy" onerror="this.remove()"></figure>
+        <blockquote class="quote reveal"><div class="stars">★★★★★</div><p>Pedí un 15 Pro por encargo y llegó en 12 días, tal cual me dijeron. Sellado y con boleta.</p><cite>Florencia M. · Malvín</cite></blockquote>
+        <figure class="ph reveal"><span></span><img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=700&q=80" alt="Equipo entregado" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="ph reveal"><span></span><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=700&q=80" alt="Equipo entregado" loading="lazy" onerror="this.remove()"></figure>
+        <blockquote class="quote q-grad reveal"><div class="stars">★★★★★</div><p>Entregué mi 13 y me fui con un 16. Todo en media hora y con mis fotos ya pasadas.</p><cite>Nicolás B. · Centro</cite></blockquote>
+        <figure class="ph m2 reveal"><span></span><img src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=900&q=80" alt="Equipo entregado" loading="lazy" onerror="this.remove()"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="sec-head reveal"><h2>Preguntas frecuentes</h2></div>
+      <div class="faq">
+        <details class="reveal"><summary>¿Los equipos son originales?</summary><p>Sí. Son originales y libres de fábrica, sin bloqueo de iCloud ni de operadora. Podés verificar el IMEI antes de pagar.</p></details>
+        <details class="reveal"><summary>¿Qué es un semi nuevo?</summary><p>Un equipo usado en muy buen estado, revisado punto por punto. En la lista figura el porcentaje de batería de cada uno.</p></details>
+        <details class="reveal"><summary>¿Qué cubre la garantía?</summary><p>Fallas de funcionamiento. No cubre golpes, humedad ni daños por uso. Te la damos por escrito con la boleta.</p></details>
+        <details class="reveal"><summary>¿Puedo pagar en cuotas?</summary><p>Sí, hasta 12 con tarjeta de crédito. El precio de lista es contado; en cuotas puede tener un recargo que te decimos antes.</p></details>
+        <details class="reveal"><summary>¿Cómo funciona el encargo?</summary><p>Señás el 30%, lo pedimos y llega en 10 a 15 días. Si el plazo se atrasa te avisamos, y podés cancelar con devolución de la seña.</p></details>
+        <details class="reveal"><summary>¿Dónde retiro?</summary><p>En nuestro showroom de Cordón, con agenda previa, o te lo enviamos a domicilio o por agencia al interior.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="container" id="contacto">
+    <div class="cta reveal">
+      <h2>¿Listo para cambiar de equipo?</h2>
+      <p>Escribinos y te respondemos en el momento. Lunes a sábado de 10 a 19 h · Showroom en Cordón con agenda previa.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-dark js-wa" data-msg="¡Hola Nubo! Quería consultar por un equipo.">Escribir por WhatsApp</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" class="btn btn-line">Ver Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="f-top">
+        <a href="#inicio" class="logo">nubo<i></i></a>
+        <nav><a href="#modelos">Modelos</a><a href="#precios">Lista de precios</a><a href="#encargo">Por encargo</a><a href="#faq">Preguntas</a></nav>
+      </div>
+      <p class="legal">Nubo Import es un revendedor independiente y no es distribuidor oficial de Apple. iPhone y AirPods son marcas de Apple Inc.</p>
+      <div class="f-bottom"><p>© <span id="year"></span> Nubo Import · Sitio de demostración</p><p>Diseño y desarrollo por <b>Synera</b></p></div>
+    </div>
+  </footer>
+
+  <!-- Barra móvil -->
+  <div class="mbar">
+    <a href="#precios" class="btn btn-ghost">Lista de precios</a>
+    <a href="#" class="btn btn-grad js-wa" data-msg="¡Hola Nubo! Quería consultar por un equipo.">WhatsApp</a>
+  </div>
+
+  <a href="#" class="wa-float js-wa" data-msg="¡Hola Nubo! Quería consultar por un equipo." aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
